@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const slides = [
   {
@@ -22,27 +22,38 @@ const slides = [
 
 export default function Carousel() {
   const sliderRef = useRef<HTMLUListElement>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    let current = 0;
     const interval = setInterval(() => {
-      if (sliderRef.current) {
-        current = (current + 1) % slides.length;
-        sliderRef.current.style.transform = `translateX(-${current * 100}%)`;
-      }
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
+    
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    if (sliderRef.current) {
+      sliderRef.current.style.transform = `translateX(-${currentSlide * (100 / slides.length)}%)`;
+    }
+  }, [currentSlide]);
 
   return (
     <div className="relative w-full h-[500px] overflow-hidden mt-5 z-[1]">
       <ul
         ref={sliderRef}
-        className="flex w-[400%] transition-transform duration-700 ease-in-out h-full"
-        style={{ willChange: "transform" }}
+        className="flex transition-transform duration-700 ease-in-out h-full"
+        style={{ 
+          width: `${slides.length * 100}%`,
+          willChange: "transform" 
+        }}
       >
         {slides.map((slide, idx) => (
-          <li key={idx} className="w-full h-full list-none relative">
+          <li 
+            key={idx} 
+            className="h-full list-none relative flex-shrink-0"
+            style={{ width: `${100 / slides.length}%` }}
+          >
             <img
               src={slide.image}
               alt={slide.text}
