@@ -3,19 +3,19 @@ import React, { useEffect, useRef, useState } from "react";
 
 const slides = [
   {
-    image: "/carusel1.jpg",
+    image: "/carusel1.webp",
     text: "Instalación y cambio de sonda nasogástrica",
   },
   {
-    image: "/carusel2.jpg",
+    image: "/carusel2.webp",
     text: "Oxigenoterapia",
   },
   {
-    image: "/carousel.jpg",
+    image: "/carousel.webp",
     text: "Baño en cama",
   },
   {
-    image: "/carusel4.jpg",
+    image: "/carusel4.webp",
     text: "Curaciones avanzadas",
   },
 ];
