@@ -2,7 +2,7 @@ import React from "react";
 
 const servicios = [
   {
-    img: "/servicio1.jpg",
+    img: "/servicio1.webp",
     title: "Enfermería domiciliaria",
     items: [
       "Intalación y cambio de sonda nasogástrica",
@@ -14,7 +14,7 @@ const servicios = [
     ],
   },
   {
-    img: "/kine.jpg",
+    img: "/kine.webp",
     title: "Kinesiología",
     items: [
       "Oxigenoterapia",
@@ -24,7 +24,7 @@ const servicios = [
     ],
   },
   {
-    img: "/confort.jpg",
+    img: "/confort.webp",
     title: "Aseo y confort",
     items: [
       "Baño en cama",

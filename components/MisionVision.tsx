@@ -10,7 +10,7 @@ export default function MisionVision() {
             <section id="sobre-nosotros" className="flex flex-col md:flex-row items-center max-w-6xl mx-auto gap-8 px-4">
               <div className="flex-1">
                 <img
-                  src="/mision.jpg"
+                  src="/mision.webp"
                   alt="Misión"
                   className="rounded-2xl w-full h-64 object-cover shadow"
                 />
@@ -35,7 +35,7 @@ export default function MisionVision() {
             <section className="flex flex-col md:flex-row-reverse items-center max-w-6xl mx-auto gap-8 px-4">
               <div className="flex-1">
                 <img
-                  src="/vision.jpg"
+                  src="/vision.webp"
                   alt="Visión"
                   className="rounded-2xl w-full h-64 object-cover shadow"
                 />
