@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function MisionVision() {
   return (
@@ -9,9 +10,11 @@ export default function MisionVision() {
           <div className="backdrop-blur-sm bg-white/70 rounded-2xl shadow-lg p-6 md:p-10">
             <section id="sobre-nosotros" className="flex flex-col md:flex-row items-center max-w-6xl mx-auto gap-8 px-4">
               <div className="flex-1">
-                <img
+                <Image
                   src="/mision.webp"
                   alt="Misión"
+                  width={800}            // puedes ajustar el tamaño, pero debe existir
+                  height={400}           // lo importante es mantener la proporción aproximada
                   className="rounded-2xl w-full h-64 object-cover shadow"
                 />
               </div>
@@ -34,9 +37,11 @@ export default function MisionVision() {
           <div className="backdrop-blur-sm bg-white/70 rounded-2xl shadow-lg p-6 md:p-10">
             <section className="flex flex-col md:flex-row-reverse items-center max-w-6xl mx-auto gap-8 px-4">
               <div className="flex-1">
-                <img
+                <Image
                   src="/vision.webp"
                   alt="Visión"
+                  width={800}       // cualquier valor; no afecta porque Tailwind manda
+                  height={400}      // igual que arriba
                   className="rounded-2xl w-full h-64 object-cover shadow"
                 />
               </div>

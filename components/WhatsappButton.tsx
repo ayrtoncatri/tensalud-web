@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from  "next/image";
 
 export default function WhatsappButton() {
   const [showPopup, setShowPopup] = useState(false);
@@ -29,7 +30,13 @@ export default function WhatsappButton() {
           handleBuzz();
         }}
       >
-        <img src="/whatsapp.webp" alt="WhatsApp" className="w-[60px] h-[60px]" />
+        <Image
+          src="/whatsapp.webp"
+          alt="WhatsApp"
+          width={60}       // coincide con tu tamaño original
+          height={60}      // coincide con tu tamaño original
+          className="w-[60px] h-[60px]"
+        />
       </div>
       {/* Popup */}
       <div
@@ -39,7 +46,13 @@ export default function WhatsappButton() {
       >
         <div className="flex items-center justify-between bg-[#25D366] text-white rounded-t-lg px-4 py-2">
           <div className="flex items-center gap-2">
-            <img src="/whatsapp.webp" alt="WhatsApp" className="w-6 h-6" />
+            <Image
+            src="/whatsapp.webp"
+            alt="WhatsApp"
+            width={60}        // coincide con tu w-[60px]
+            height={60}       // coincide con tu h-[60px]
+            className="w-[60px] h-[60px]"
+          />
             <span>WhatsApp</span>
           </div>
           <button className="text-2xl" onClick={togglePopup}>&times;</button>

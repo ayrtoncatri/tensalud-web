@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image"
 
 const servicios = [
   {
@@ -53,9 +54,11 @@ export default function ServiciosOfrecidos({ onSaberMas }: { onSaberMas?: () => 
                   className="rounded-xl shadow flex flex-col overflow-hidden border border-gray-200 bg-transparent"
                 >
                   <div className="w-full h-48 bg-gray-200 flex items-center justify-center">
-                    <img
+                    <Image
                       src={serv.img}
                       alt={serv.title}
+                      width={800}     // cualquier valor, no afecta debido a tus clases
+                      height={600}    // solo requerido por Next
                       className="w-full h-full object-cover"
                     />
                   </div>

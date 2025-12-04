@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 const slides = [
   {
@@ -54,9 +55,11 @@ export default function Carousel() {
             className="h-full list-none relative flex-shrink-0"
             style={{ width: `${100 / slides.length}%` }}
           >
-            <img
+            <Image
               src={slide.image}
               alt={slide.text}
+              width={800}    // cualquier valor, no afecta porque Tailwind manda
+              height={600}   // requerido por Next.js
               className="w-full h-full object-cover brightness-[.5] contrast-[.8]"
             />
             <div className="absolute top-1/2 left-0 w-full flex justify-center items-center text-center px-10 md:px-64 -translate-y-1/2">

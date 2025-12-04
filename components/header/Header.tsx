@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Header({ onContactClicked }: { onContactClicked?: () => void }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,7 +28,13 @@ export default function Header({ onContactClicked }: { onContactClicked?: () => 
         <div className="flex justify-between items-center px-6 h-[100px]">
           {/* Logo + TENSANDHEALTH */}
           <div className="flex items-center">
-            <img src="/logo2.png" alt="logo" className="max-w-[100px] mr-6" />
+            <Image
+              src="/logo2.png"
+              alt="logo"
+              width={100}        // coincide con max-w-[100px]
+              height={50}        // valor aproximado, no afecta el layout final
+              className="max-w-[100px] mr-6"
+            />
             <span className="text-3xl md:text-4xl font-bold text-[#003a56] tracking-wide">
               TENSAND
               <span className="text-[#00b488]">HEALTH</span>
@@ -39,7 +46,13 @@ export default function Header({ onContactClicked }: { onContactClicked?: () => 
             onClick={() => setIsMenuOpen((v) => !v)}
             aria-label="Abrir menú"
           >
-            <img src="/menu3.png" alt="menu" className="w-10" />
+            <Image
+              src="/menu3.png"
+              alt="menu"
+              width={40}        // coincide con w-10 (10 * 4 = 40px)
+              height={40}       // valor aproximado, suficiente para Next
+              className="w-10"
+            />
           </button>
         </div>
         {/* Menú principal */}

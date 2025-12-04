@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+
 
 export default function Footer() {
   return (
@@ -7,7 +9,13 @@ export default function Footer() {
         {/* Logo */}
         <div className="flex justify-center items-center">
           <a href="#">
-            <img src="/logo2.png" alt="logo tens and health" className="w-[150px]" />
+            <Image
+              src="/logo2.png"
+              alt="logo tens and health"
+              width={150}      // coincide con tu w-[150px]
+              height={50}      // un valor aproximado, no afecta el diseño final
+              className="w-[150px]"
+            />
           </a>
         </div>
         {/* Sobre nosotros */}
